@@ -1,0 +1,10 @@
+services:
+  frontend:
+    image: mapleleaves0511/234-deploylab-frontend:latest
+    pull_policy: always
+    ports:
+      - "8081:80"
+    environment:
+      - VITE_GRAPHQL_URI=http://54.165.237.66:8082/graphql
+      - VITE_SERVER_URI=http://54.165.237.66:8082
+    restart: unless-stopped
